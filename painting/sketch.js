@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-  background(51);
+  // background(51);
   video.loadPixels();
   for(var i = 0; i < particles.length; i++) {
     particles[i].update();
