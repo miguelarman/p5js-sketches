@@ -39,6 +39,16 @@ function draw () {
 
 		rings[i].x += random(sliderValue) - sliderValue/2;
 		rings[i].y += random(sliderValue) - sliderValue/2;
+
+		if (rings[i].x > width) {
+			rings[i].x = width - 1;
+		} else if (rings[i].x < 0) {
+			rings[i].x = 0;
+		} else if (rings[i].y > height) {
+			rings[i].y = heigth - 1;
+		} else if (rings[i].y < 0) {
+			rings[i].y = 0;
+		}
 	}
 
 	// rings[floor(random(rings.length))].x += random(10) - 5;
