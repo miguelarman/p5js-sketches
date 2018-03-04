@@ -26,9 +26,10 @@ function draw() {
       var w = map(bright, 0, 255, 0, vScale);
 
       noStroke();
-      fill(255);
+      //fill(255);
+      fill(r, g, b);
       rectMode(CENTER);
-      rect(x*vScale, y*vScale, w, w);
+      rect(x*vScale + vScale/2, y*vScale + vScale/2, w, w);
 
     }
   }
