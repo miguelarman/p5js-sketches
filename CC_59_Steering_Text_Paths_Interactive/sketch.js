@@ -58,12 +58,11 @@ function draw() {
 function newText() {
 
   name = input.value();
+  vehicles = [];
 
   var points = font.textToPoints(name, 75, 200, 152, {
     sampleFactor: 0.15
   });
-
-  vehicles = [];
 
   for (var i = 0; i < points.length; i++) {
     var pt = points[i];
