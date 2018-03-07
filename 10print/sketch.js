@@ -34,7 +34,7 @@ function draw() {
 
   if (y > height) {
     noLoop();
-    console.log("hey!");
+    console.log("Así que alguien está leyendo esto...");
   }
 
 }
