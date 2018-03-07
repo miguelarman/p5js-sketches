@@ -20,7 +20,7 @@ function setup() {
 
   input = createInput("New word");
   button = createButton("Go!");
-  button.mousePressed(newText(input.value()));
+  button.mousePressed(newText();
 
   background(51);
   // textFont(font);
@@ -55,9 +55,9 @@ function draw() {
 
 
 
-function newText(newText) {
+function newText() {
 
-  name = newText;
+  name = input.value();
 
   var points = font.textToPoints(name, 75, 200, 152, {
     sampleFactor: 0.15
