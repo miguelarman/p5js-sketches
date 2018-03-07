@@ -6,7 +6,7 @@
 var font;
 var vehicles = [];
 
-var text = "";
+var name = "";
 
 function preload() {
   font = loadFont('AvenirNextLTPro-Demi.otf');
@@ -48,7 +48,10 @@ function draw() {
 
 
 function newText(newText) {
-  var points = font.textToPoints(text, 75, 200, 152, {
+
+  name = newText;
+
+  var points = font.textToPoints(name, 75, 200, 152, {
     sampleFactor: 0.15
   });
 
