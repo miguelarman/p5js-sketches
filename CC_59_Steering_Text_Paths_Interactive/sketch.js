@@ -20,7 +20,7 @@ function setup() {
 
   input = createInput("New word");
   button = createButton("Go!");
-  button.mousePressed(newText();
+  button.mousePressed(newText());
 
   background(51);
   // textFont(font);
