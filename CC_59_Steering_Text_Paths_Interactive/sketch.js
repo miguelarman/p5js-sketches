@@ -8,12 +8,20 @@ var vehicles = [];
 
 var name = "";
 
+var input;
+var button;
+
 function preload() {
   font = loadFont('AvenirNextLTPro-Demi.otf');
 }
 
 function setup() {
   createCanvas(600, 300);
+
+  input = createInput("New word");
+  button = createButton("Go!");
+  button.mousePressed(newText(input.value()));
+
   background(51);
   // textFont(font);
   // textSize(192);
