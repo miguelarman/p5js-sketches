@@ -23,13 +23,12 @@ function setup() {
   button.mousePressed(newText);
 
   background(51);
-  // textFont(font);
-  // textSize(192);
-  // fill(255);
-  // noStroke();
-  text('Miguel', 100, 200);
-
+  textFont(font);
+  textSize(192);
+  fill(255);
+  noStroke();
   textAlign(CENTER);
+  text('Miguel', 100, 200);
 
   var points = font.textToPoints('Miguel', 75, 200, 152, {
     sampleFactor: 0.15
