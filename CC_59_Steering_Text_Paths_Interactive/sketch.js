@@ -63,6 +63,8 @@ function newText() {
     sampleFactor: 0.15
   });
 
+  vehicles = [];
+
   for (var i = 0; i < points.length; i++) {
     var pt = points[i];
     var vehicle = new Vehicle(pt.x, pt.y);
