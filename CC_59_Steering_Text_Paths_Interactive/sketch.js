@@ -29,6 +29,8 @@ function setup() {
   // noStroke();
   text('Miguel', 100, 200);
 
+  textAlign(CENTER);
+
   var points = font.textToPoints('Miguel', 75, 200, 152, {
     sampleFactor: 0.15
   });
