@@ -22,7 +22,7 @@ function setup() {
 
 function draw() {
   for (var i = 0; i < lineas_por_iteracion; i++) {
-    var r = radios[floor(random(0, radios.length)]);
+    var r = radios[floor(random(0, radios.length))];
     var angle = floor(random(0, 360));
     var x = floor(r * cos(radians(angle)));
     var y = floor(r * sin(radians(angle)));
