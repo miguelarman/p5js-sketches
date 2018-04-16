@@ -7,7 +7,7 @@ var clockDiameter;
 var lineas_por_iteracion = 50;
 
 function setup() {
-  size(400, 400);
+  createCanvas(400, 400);
   background(255);
   
   cx = width / 2;
