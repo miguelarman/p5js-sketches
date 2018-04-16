@@ -22,13 +22,13 @@ function setup() {
 
 function draw() {
   for (var i = 0; i < lineas_por_iteracion; i++) {
-    var r = radios[(int)random(0, radios.length)];
-    var angle = (int)random(0, 360);
-    var x = (int)(r * cos(radians(angle)));
-    var y = (int)(r * sin(radians(angle)));
+    var r = radios[floor(random(0, radios.length)]);
+    var angle = floor(random(0, 360));
+    var x = floor(r * cos(radians(angle)));
+    var y = floor(r * sin(radians(angle)));
     
     strokeWeight(4);
-    stroke((int)random(0, 255), (int)random(0, 255), (int)random(0, 255));
+    stroke(floor(random(0, 255), floor(random(0, 255), floor(random(0, 255));
     
     line(width / 2, height / 2, width / 2 + x, height / 2 + y);
   }
