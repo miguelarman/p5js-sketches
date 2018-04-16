@@ -13,7 +13,7 @@ function setup() {
   cx = width / 2;
   cy = height / 2;
   
-  int radius = min(width, height) / 2;
+  var radius = min(width, height) / 2;
   secondsRadius = radius * 0.72;
   minutesRadius = radius * 0.60;
   hoursRadius = radius * 0.50;
