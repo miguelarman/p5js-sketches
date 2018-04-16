@@ -45,7 +45,7 @@ function draw () {
 		} else if (rings[i].x < 0) {
 			rings[i].x = 0;
 		} else if (rings[i].y > height) {
-			rings[i].y = heigth - 1;
+			rings[i].y = height - 1;
 		} else if (rings[i].y < 0) {
 			rings[i].y = 0;
 		}
