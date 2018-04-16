@@ -21,7 +21,7 @@ function setup() {
 }
 
 function draw() {
-  for (int i = 0; i < lineas_por_iteracion; i++) {
+  for (var i = 0; i < lineas_por_iteracion; i++) {
     var r = radios[(int)random(0, radios.length)];
     var angle = (int)random(0, 360);
     var x = (int)(r * cos(radians(angle)));
