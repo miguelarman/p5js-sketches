@@ -28,7 +28,7 @@ function draw() {
     var y = floor(r * sin(radians(angle)));
     
     strokeWeight(4);
-    stroke(floor(random(0, 255), floor(random(0, 255), floor(random(0, 255));
+    stroke(floor(random(0, 255)), floor(random(0, 255)), floor(random(0, 255)));
     
     line(width / 2, height / 2, width / 2 + x, height / 2 + y);
   }
