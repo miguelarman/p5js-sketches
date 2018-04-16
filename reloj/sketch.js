@@ -16,7 +16,7 @@ function setup() {
   var radius = min(width, height) / 2;
   secondsRadius = radius * 0.72;
   minutesRadius = radius * 0.60;
-  hoursRadius = radius * 0.50;
+  hoursRadius = radius * 0.40;
   clockDiameter = radius * 1.8;
 }
 
