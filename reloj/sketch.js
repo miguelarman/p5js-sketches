@@ -1,4 +1,4 @@
-var radios[] = {50, 100, 150, 200, 300};
+var radios[] = [50, 100, 150, 200, 300];
 var cx, cy;
 var secondsRadius;
 var minutesRadius;
