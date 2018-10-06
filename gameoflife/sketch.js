@@ -29,6 +29,10 @@ function setup() {
       grid[i][j] = floor(random(2));
     }
   }
+
+
+
+
 }
 
 function draw() {
