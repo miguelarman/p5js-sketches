@@ -27,7 +27,7 @@ function draw() {
 
   for (let i = 0; i < 6; i++) {
     rotate(PI/3);
-    current.show();
+    //current.show();
     for (let s of snowflake) {
       s.show();
     }
@@ -37,7 +37,7 @@ function draw() {
 
   for (let i = 0; i < 6; i++) {
     rotate(PI/3);
-    current.show();
+    //current.show();
     for (let s of snowflake) {
       s.show();
     }
