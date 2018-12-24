@@ -1,7 +1,6 @@
 let current;
 let snowflake = [];
 let r = 2;
-let max = 1000;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -13,9 +12,12 @@ function draw() {
   background(0);
   translate(width/2, height/2);
   rotate(PI/6);
+  
+  let last = true;
 
 
   while (!current.finished() && !current.intersects(snowflake)) {
+    last = false;
     current.update();
   }
 
@@ -41,8 +43,8 @@ function draw() {
     }
   }
   
-  console.log(snowflake.length);
-  if (snowflake.length > max) {
+  if (last) {
     saveCanvas('image', 'png');
+    noLoop();
   }
 }
