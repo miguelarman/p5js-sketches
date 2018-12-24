@@ -41,6 +41,7 @@ function draw() {
     }
   }
   
+  console.log(snowflake.length);
   if (snowflake.length > max) {
     saveCanvas('image', 'png');
   }
