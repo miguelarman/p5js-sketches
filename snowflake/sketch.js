@@ -1,6 +1,7 @@
 let current;
 let snowflake = [];
 let r = 2;
+let max = 1000;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -39,5 +40,8 @@ function draw() {
       s.show();
     }
   }
-
+  
+  if (snowflake.length > max) {
+    saveCanvas('image', 'png');
+  }
 }
