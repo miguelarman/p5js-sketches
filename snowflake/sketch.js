@@ -45,6 +45,6 @@ function draw() {
   
   if (last) {
     saveCanvas('image', 'png');
-    noLoop();
+    snowflake = [];
   }
 }
