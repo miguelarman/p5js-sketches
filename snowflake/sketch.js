@@ -12,9 +12,12 @@ function draw() {
   background(0);
   translate(width/2, height/2);
   rotate(PI/6);
+  
+  let last = true;
 
 
   while (!current.finished() && !current.intersects(snowflake)) {
+    last = false;
     current.update();
   }
 
@@ -24,7 +27,7 @@ function draw() {
 
   for (let i = 0; i < 6; i++) {
     rotate(PI/3);
-    current.show();
+    //current.show();
     for (let s of snowflake) {
       s.show();
     }
@@ -34,10 +37,14 @@ function draw() {
 
   for (let i = 0; i < 6; i++) {
     rotate(PI/3);
-    current.show();
+    //current.show();
     for (let s of snowflake) {
       s.show();
     }
   }
-
+  
+  if (last) {
+    saveCanvas('image', 'png');
+    snowflake = [];
+  }
 }
