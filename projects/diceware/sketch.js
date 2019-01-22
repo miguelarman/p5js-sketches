@@ -8,7 +8,7 @@ function preload() {
   // Get the most recent earthquake in the database
   let url = 'https://miguelarman.github.io/p5js-sketches/projects/diceware/diceware.json';
   dw = loadJSON(url);
-  console.log(dw["000000"]);
+  console.log(dw);
   console.log('Diceware loaded');
 }
 
