@@ -4,10 +4,11 @@ let button;
 let input;
 let dw;
 let password;
+let url;
 
 function preload() {
   // Get the most recent earthquake in the database
-  let url = 'https://miguelarman.github.io/p5js-sketches/projects/diceware/diceware.json';
+  url = 'https://miguelarman.github.io/p5js-sketches/projects/diceware/diceware.json';
   dw = loadJSON(url);
   console.log('Diceware loaded');
 }
