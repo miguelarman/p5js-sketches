@@ -25,8 +25,9 @@ function setup() {
 
   createElement('h2', 'Notes:');
   createP('In order to choose your password, change the list of words, mix the resulting words, add punctuation, change lowercase... Be random');
-  createP('To be even more secure, use some regular dices at home (computer do not generate completely random numbers)');
+  createP('To be even more secure, use some regular dices at home (computer do not generate completely random numbers) with a list of diceware words');
   createA(url, 'Link of words');
+  createA('http://www.diceware.com/', 'Diceware official website');
 }
 
 function update() {
