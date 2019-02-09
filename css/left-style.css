@@ -21,6 +21,11 @@ a:active {
   color: black;
 }
 
+hr {
+  color: #000000;
+  background-color: #000000;
+}
+
 h1 {
   color: navy;
 }
