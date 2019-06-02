@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Prueba script</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+  </head>
+
+  <body>
+
+    <canvas id="chart" width="800" height="400"></canvas>
+
+    <script type="text/javascript">
+
+      // Data from https://data.giss.nasa.gov/gistemp/tabledata_v3/ZonAnn.Ts+dSST.csv
+
+      async function getData() {
+        const xs = [];
+        const ys = [];
+
+        const response = await fetch('datos.csv');
+        const data = await response.text();
+        // console.log(data);
+
+        const rows = data.split('\n').slice(1);
+        // console.log(rows)
+
+        rows.forEach(elt => {
+          const row = elt.split(',');
+          if (row.length > 1) {
+            year = row[0];
+            temp = row[1];
+
+            ys.push(parseFloat(temp) + 14);
+            xs.push(year);
+            // console.log(year, temp);
+          }
+        });
+
+        return { xs, ys };
+      }
+
+      async function graph() {
+        const data = await getData();
+
+        const ctx = document.getElementById('chart').getContext('2d');
+
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.xs,
+                datasets: [{
+                    label: 'Combined Land-Surface Air and Sea-Surface Water Temperature in ºC (1980-present)',
+                    data: data.ys,
+                    fill: false,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          callback: function(value, index, values) {
+                              return value + 'ºC';
+                          }
+                      }
+                  }]
+              },
+              responsive: false
+            }
+        });
+      }
+
+      graph();
+
+    </script>
+
+  </body>
+</html>
