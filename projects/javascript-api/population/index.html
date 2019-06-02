@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Poblacion de españa</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+
+  </head>
+  <body>
+    <h1>Population in Spain: births by thousand habitants</h1>
+
+    <canvas id="chart" width="800" height="400"></canvas>
+
+    <script type="text/javascript">
+
+      var xs = [];
+      const ys = [];
+
+      async function getData() {
+        const response = await fetch('datos.csv');
+        const data = await response.text();
+        // console.log(data);
+
+        const rows = data.split('\n');
+        // console.log(rows);
+
+        years = rows[0].slice(1);
+        years = years.split(',');
+        years.reverse();
+        xs = years;
+        // console.log(years);
+
+        numbers = rows.slice(1);
+        // console.log(cifras);
+
+        numbers.forEach((f) => {
+          row = f.split(',');
+          // console.log(row);
+
+          const name = row[0];
+          const p = row.slice(1).reverse();
+
+          // console.log(name, p);
+
+          ys.push({name, p});
+        });
+
+        // console.log(ys);
+        return { xs, ys };
+      }
+
+      async function graph() {
+        const data = await getData();
+        // console.log(data);
+
+        const ctx = document.getElementById('chart').getContext('2d');
+
+        const datasets = [];
+
+        data.ys.forEach((d) => {
+          const color = 'rgba(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ')';
+          const dataset = {
+              label: d.name,
+              data: d.p,
+              fill: false,
+              backgroundColor: color,
+              borderColor: color,
+              borderWidth: 1
+          }
+
+          datasets.push(dataset);
+        });
+
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.xs,
+                datasets: datasets
+            }, options: {
+              responsive: true
+            }
+        });
+      }
+
+        graph();
+
+    </script>
+  </body>
+</html>
